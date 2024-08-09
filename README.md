@@ -56,11 +56,11 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 2. Configuring Compute in Databricks
 3. Create a new notebook within Databricks and rename it appropriately, reflecting its purpose or the dataset it pertains to.
 4. Establishing a Connection to Azure Data Lake Storage (ADLS)
-5. Using the credentials (Client ID, Tenant ID, Secret), write the appropriate code in the Databricks notebook to mount ADLS. It is recommended to not reveal your secret value if the project is to be shared. Utilize the Azure Key Vault for this purpose. Fill in the name of your container, and the folder accordingly.
+5. Using the credentials (Client ID, Tenant ID, Secret), write the appropriate code in the Databricks notebook to mount ADLS. It is recommended not to reveal your secret value if the project is to be shared. Utilize the Azure Key Vault for this purpose. Fill in the name of your container, and the folder accordingly.
 
 <img width="1010" alt="image" src="https://github.com/user-attachments/assets/c1b380b2-14d9-46fe-b443-a1905f3a93d9">
 
-6. Use the spark.read to Read the Data from the Raw Folder. Spark automatically detects the schema of the tables with the option 'inferSchema'.
+6. Use the 'spark.read' to Read the Data from the Raw Folder. Spark automatically detects the schema of the tables with the option 'inferSchema'.
    
 <img width="1099" alt="spark read from raw container" src="https://github.com/user-attachments/assets/2647dcaa-bf65-4071-9779-b968935507eb">
 
@@ -78,7 +78,7 @@ The output data was consolidated into a single file within the 'transformed' fol
  
 Refer to below notebook to transformations and code used to mount ADLS Gen2 to Databricks.
 
-[Tokyo Olympics Transformation.ipynb](https://github.com/shubhammirajkar/tokyo_olympic_de_project/blob/main/Tokyo%20Olympics%20Transformation.ipynb)
+[Tokyo Olympics Transformation.ipynb](https://github.com/NickolasB98/tokyo-olympics-project/blob/main/Tokyo%20Olympic%20Transformation.ipynb)
 
 ### Setting Up and Using Azure Synapse Analytics
 1. Creating a Synapse Analytics Workspace.
@@ -130,5 +130,6 @@ You can also use PowerBI to generate your analysis reports.
 
 
 Refer to the SQL scripts used for data exploration and analysis in Azure Synapse Analytics:
+
 
 
