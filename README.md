@@ -85,7 +85,7 @@ The output data was consolidated into a single file within the 'transformed' fol
 <img width="1414" alt="Screenshot at Aug 10 01-05-47" src="https://github.com/user-attachments/assets/cf6b28c3-a387-4de5-bb0a-a0f2a763dafb">
 
  
-* Please take a look at the notebook below for the whole mounting and transformation script. *
+**Please look at the notebook below for the whole mounting and transformation script.**
 
 [Tokyo Olympics Transformation.ipynb](https://github.com/NickolasB98/tokyo-olympics-project/blob/main/Tokyo%20Olympic%20Transformation.ipynb)
 
