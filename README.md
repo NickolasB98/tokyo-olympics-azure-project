@@ -4,7 +4,7 @@
 
 
 ## Description
-This project comprehensively explores the Tokyo Olympics dataset, employing a data engineering and analytics pipeline. Commencing with a CSV file hosted on GitHub, the data is ingested into the Azure ecosystem via Azure Data Factory. Subsequently, it undergoes a data transformation within Azure Databricks before being securely stored in Azure Data Lake Storage Gen2. Interactive analytics are then performed on the enriched dataset using SQL scripts in Azure Synapse, culminating in insightful visualizations generated through Azure Synapse (or Power BI).
+This project uses a data engineering and analytics pipeline to explore the Tokyo Olympics dataset. Commencing with a folder of CSV files hosted on GitHub, the data is ingested into the Azure ecosystem via Azure Data Factory. Subsequently, it undergoes a data transformation within Azure Databricks before being securely stored in Azure Data Lake Storage Gen2. Interactive analytics are then performed on the enriched dataset using SQL scripts in Azure Synapse, culminating in insightful visualizations generated through Azure Synapse (or Power BI).
 
 ## Architecture 
 
