@@ -43,12 +43,12 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 8. File Format and Sink Configuration: The file format is defined, and a linked service is established for the data sink (Azure Data Lake Storage Gen2).
 9. Pipeline Execution: All configured copy data activities are executed concurrently to expedite the data ingestion process.
    
-<img width="1086" alt="Screenshot at Aug 09 21-31-54" src="https://github.com/user-attachments/assets/962f7276-9276-4b2c-8eff-b6891ff9e608">
+<img width="1438" alt="Screenshot at Aug 10 01-00-22" src="https://github.com/user-attachments/assets/e7fa415d-0aa7-4028-a416-7be54ec8b13d">
 
 
 10. After the pipeline completes its execution, navigate to your Azure Data Lake Storage Gen2. Dive into the "raw" folder and validate that the files, like "athletes.csv", "medals.csv", etc., are present and populated with the expected data.
 
-<img width="1422" alt="raw_container" src="https://github.com/user-attachments/assets/c558e89c-ca18-4190-99b3-3ce967fde567">
+<img width="1422" alt="raw_container" src="https://github.com/user-attachments/assets/ba8cf0e4-562b-49bd-826e-84c86b925c87">
 
 
 ### Data Transformation using Azure Databricks
@@ -66,23 +66,24 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 
 7. Using the credentials (Client ID, Tenant ID, Secret), write the appropriate code in the Databricks notebook to mount ADLS. It is recommended that you don't share your secret value if the project is to be shared. Utilize the Azure Key Vault for this purpose. Fill in the name of your container, and the folder accordingly.
 
-<img width="1010" alt="image" src="https://github.com/user-attachments/assets/c1b380b2-14d9-46fe-b443-a1905f3a93d9">
+<img width="1010" alt="Screenshot at Aug 10 01-03-26" src="https://github.com/user-attachments/assets/36c8e3a1-41cc-4431-88b8-b61d66a4e447">
+
 
 8. Use the 'spark.read' to Read the Data from the Raw Folder. Spark automatically detects the schema of the tables with the option 'inferSchema'.
    
-<img width="1099" alt="spark read from raw container" src="https://github.com/user-attachments/assets/2647dcaa-bf65-4071-9779-b968935507eb">
+<img width="1099" alt="spark read from raw container" src="https://github.com/user-attachments/assets/634c0a9f-ac6b-48a6-b965-05fcd59b76cb">
 
 
 9. Write Transformed Data to ADLS Gen2.
 
-<img width="1013" alt="spark write to transformed container" src="https://github.com/user-attachments/assets/ea745998-ecda-4082-bf88-bf7322456a46">
+<img width="1013" alt="spark write to transformed container" src="https://github.com/user-attachments/assets/0f73f10a-b976-4a3e-95d7-ff6891e162b6">
 
-
-<img width="1399" alt="transformed_container" src="https://github.com/user-attachments/assets/cb31ff2a-f9cc-4fa2-b852-bc7ffdf301be">
+<img width="1399" alt="transformed_container" src="https://github.com/user-attachments/assets/ba610127-b3e5-4fe6-aeb5-26906342766d">
 
 The output data was consolidated into a single file within the 'transformed' folder, indicating that the data processing job likely executed with only one partition.
 
-<img width="1405" alt="athletes_spark_job_transformation" src="https://github.com/user-attachments/assets/6abbbca4-f9d4-4913-a552-5f37149de114">
+<img width="1414" alt="Screenshot at Aug 10 01-05-47" src="https://github.com/user-attachments/assets/cf6b28c3-a387-4de5-bb0a-a0f2a763dafb">
+
  
 * Please take a look at the notebook below for the whole mounting and transformation script. *
 
@@ -91,9 +92,9 @@ The output data was consolidated into a single file within the 'transformed' fol
 ### Setting Up and Using Azure Synapse Analytics
 1. Creating a Synapse Analytics Workspace.
 2. Within Workspace navigate to the "Data" section, choose "Lake Database"  and create a Database "TokyoDB"
-3. Create a Table from the Data Lake's Transformed folder within your ADLS Gen2 storage.
+3. Create the Tables from the Data Lake's Transformed folder within your ADLS Gen2 storage.
 
-<img width="1377" alt="tokyoDB" src="https://github.com/user-attachments/assets/2a8f1a35-1ad8-4f16-a057-ca1f73f648ef">
+<img width="1377" alt="tokyoDB" src="https://github.com/user-attachments/assets/7e5db195-95ed-4c7e-84db-bf5c566bc72c">
 
  
 ### Performing Data Analysis on the Transformed Data
