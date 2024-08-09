@@ -104,40 +104,33 @@ You can also use PowerBI to generate your analysis reports.
 
 #### Most Athletes Per Country:
 
-<img width="1060" alt="image" src="https://github.com/user-attachments/assets/ebde1ced-e7f0-4fb2-bd32-8349e25d541f">
-
+<img width="1031" alt="topathletespercountry" src="https://github.com/user-attachments/assets/f13185fc-c947-4cb9-af04-912be2cc2c63">
 
 #### Total medals won by each country (Gold, Silver, Bronze):
 
-<img width="1043" alt="image" src="https://github.com/user-attachments/assets/4698cf6e-a5b4-4eba-8d7a-2c5bfd7d1189">
+<img width="1025" alt="medalsbycountry" src="https://github.com/user-attachments/assets/d2f786f4-d3e1-44f0-8fd9-2fc9b7a2e137">
 
+#### Top Counties with the highest Medals count (total):
 
-#### Top 20 Counties with the highest Medals count (total):
-
-<img width="1039" alt="image" src="https://github.com/user-attachments/assets/93a0f848-091c-4864-bbf7-15e3bb31f420">
-
+<img width="1030" alt="20countriestotalmedals" src="https://github.com/user-attachments/assets/60f94845-6702-4963-b887-ff005ce2b2b0">
 
 ####  Average athletes per Discipline:
 
-<img width="1036" alt="image" src="https://github.com/user-attachments/assets/775f5473-2705-4351-af54-11b88b65e550">
+<img width="1028" alt="avgathletesperdiscipline" src="https://github.com/user-attachments/assets/12fa9002-a163-4101-a3ee-79f7186b6d81">
 
+#### Top entry counts by gender for each Discipline:
 
-#### Top 40 entry counts by gender for each Discipline:
-
-<img width="976" alt="image" src="https://github.com/user-attachments/assets/b376302f-da44-4f76-8e51-7c631ca06e01">
-
-<img width="759" alt="image" src="https://github.com/user-attachments/assets/684b3870-69de-4ecc-8902-8eb796516b14">
-
+<img width="1076" alt="entriespergender" src="https://github.com/user-attachments/assets/1686b316-5d3d-4beb-ab6e-da912b052172">
 
 #### Top 10 countries with the most Coaches: 
 
-<img width="1015" alt="image" src="https://github.com/user-attachments/assets/abb86621-6ffe-400a-9031-e4d4243b84c0">
+<img width="1026" alt="topcoachespercountry" src="https://github.com/user-attachments/assets/d43ca8e0-2d5f-4d0e-ac2b-07ebe12e9ef2">
 
 #### Top 10 disciplines with the most Coaches:
 
-<img width="1044" alt="image" src="https://github.com/user-attachments/assets/044dcb96-3875-4269-8bbd-aa59cf0f4f0d">
+<img width="1020" alt="topcoachesperdiscipline" src="https://github.com/user-attachments/assets/bbc7f31a-1330-4aad-9320-997ad4e1627a">
 
 
-Refer to the SQL scripts used for data exploration and analysis in Azure Synapse Analytics:
+**Refer to the SQL scripts used for data exploration and analysis in Azure Synapse Analytics:**
 
 [SQLscript.sql](https://github.com/NickolasB98/tokyo-olympics-project/blob/main/SQLscript.sql)
