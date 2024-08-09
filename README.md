@@ -7,7 +7,9 @@
 This project undertakes a comprehensive exploration of the Tokyo Olympics dataset, employing a robust data engineering and analytics pipeline. Commencing with a CSV file hosted on GitHub, the data is seamlessly ingested into the Azure ecosystem via Azure Data Factory. Subsequently, it undergoes meticulous transformation within Azure Databricks before being securely stored in Azure Data Lake Storage Gen2. Advanced analytics are then performed on the enriched dataset using Azure Synapse, culminating in insightful visualizations generated through either Azure Synapse or Power BI.
 
 ## Architecture 
-<img src="Images/Architecture.png">
+
+![Architecture](https://github.com/user-attachments/assets/697a0821-19b9-417e-8092-69781dc1f2c9)
+
 
 ## Dataset Used 
 The dataset encompasses a detailed profile of over 11,000 athletes, spanning 47 disciplines, and representing 743 teams that participated in the 2021 Tokyo Olympics. It provides granular information on athletes, coaches, teams, and competition entries, including names, countries, disciplines, genders, and coach details.
@@ -23,7 +25,7 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 ## Workflow 
 
 ### Initial Setup
-1. Sign in to Azure Subscription account.
+1. Sign in to your Azure Subscription account.
 2. Create a Resource Group 'tokyo-olympics-rg' to house and manage all the Azure resources associated with this project. 
 3. Within the created resource group, set up a storage account. This is specifically configured to leverage Azure Data Lake Storage(ADLS) Gen2 capabilities.
 4. Create a Container inside this storage account to hold the project's data. Two directories 'raw' and 'transformed' are created to store raw data and transformed data.
