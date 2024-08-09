@@ -4,7 +4,7 @@
 
 
 ## Description
-This project undertakes a comprehensive exploration of the Tokyo Olympics dataset, employing a robust data engineering and analytics pipeline. Commencing with a CSV file hosted on GitHub, the data is seamlessly ingested into the Azure ecosystem via Azure Data Factory. Subsequently, it undergoes meticulous transformation within Azure Databricks before being securely stored in Azure Data Lake Storage Gen2. Advanced analytics are then performed on the enriched dataset using Azure Synapse, culminating in insightful visualizations generated through either Azure Synapse or Power BI.
+This project comprehensively explores the Tokyo Olympics dataset, employing a robust data engineering and analytics pipeline. Commencing with a CSV file hosted on GitHub, the data is seamlessly ingested into the Azure ecosystem via Azure Data Factory. Subsequently, it undergoes a meticulous data transformation within Azure Databricks before being securely stored in Azure Data Lake Storage Gen2. Advanced analytics are then performed on the enriched dataset using Azure Synapse, culminating in insightful visualizations generated through Azure Synapse or Power BI.
 
 ## Architecture 
 
@@ -27,24 +27,23 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 ### Initial Setup
 1. Sign in to your Azure Subscription account.
 2. Create a Resource Group 'tokyo-olympics-rg' to house and manage all the Azure resources associated with this project. 
-3. Within the created resource group, set up a storage account. This is specifically configured to leverage Azure Data Lake Storage(ADLS) Gen2 capabilities.
-4. Create a Container inside this storage account to hold the project's data. Two directories 'raw' and 'transformed' are created to store raw data and transformed data.
+3. Within the created resource group, set up a storage account. This is configured to leverage Azure Data Lake Storage(ADLS) Gen2 capabilities.
+4. Create a Container inside this storage account to hold the project's data. Two directories 'raw' and 'transformed' are created to store raw and transformed data.
    
 <img width="1427" alt="containers" src="https://github.com/user-attachments/assets/3068ed5c-3054-4c8d-9d34-7a2ea51d7201">
 
 ### Data Ingestion using Azure Data Factory
-1. Create an Azure Data Factory workspace within the previously established resource group.
-2. After setting up the workspace, launch the Azure Data Factory Studio. 
-3. Upload the Tokyo Olympics dataset from kaggle to GitHub.
-4. Within the studio, initialize a new data integration pipeline. Now use the task Copy Data to move data efficiently between various supported sources and destinations.
-5. Configuring the Data Source with an HTTP template as we are using HTTP request to get the data from the GitHub repo.
-6. Establishing the Linked Service for source.
-7. Configuring the File Format for and setting up the Linked Service Sink.
-8. Repeat the above steps to load all the datasets.
-9. You can connect all the copy data activities and run them all at once.
+1. Workspace Creation: An Azure Data Factory workspace is established within the designated resource group.
+2. Data Factory Studio Initialization: The Azure Data Factory Studio is launched for pipeline configuration.
+3. Dataset Upload: The Tokyo Olympics dataset, initially sourced from Kaggle, is uploaded to GitHub for version control and accessibility.
+4. Data Integration Pipeline: A new data integration pipeline is created within the Data Factory Studio to orchestrate the data movement.
+5. Copy Data Activity: The Copy Data activity is employed to efficiently transfer data between supported sources and destinations.
+6. Data Source Configuration: An HTTP-based data source is configured to retrieve data from the GitHub repository.
+7. Linked Service Establishment: A linked service is created to connect to the data source.
+8. File Format and Sink Configuration: The file format is defined, and a linked service is established for the data sink (Azure Data Lake Storage Gen2).
+9. Pipeline Execution: All configured copy data activities are executed concurrently to expedite the data ingestion process.
    
 <img width="1086" alt="Screenshot at Aug 09 21-31-54" src="https://github.com/user-attachments/assets/962f7276-9276-4b2c-8eff-b6891ff9e608">
-
 
 
 10. After the pipeline completes its execution, navigate to your Azure Data Lake Storage Gen2. Dive into the "raw" folder and validate that the files, like "athletes.csv", "medals.csv", etc., are present and populated with the expected data.
@@ -57,16 +56,27 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 2. Configuring Compute in Databricks
 3. Create a new notebook within Databricks and rename it appropriately, reflecting its purpose or the dataset it pertains to.
 4. Establishing a Connection to Azure Data Lake Storage (ADLS)
-5. Using the credentials (Client ID, Tenant ID, Secret), write the appropriate code in the Databricks notebook to mount ADLS. It is recommended not to reveal your secret value if the project is to be shared. Utilize the Azure Key Vault for this purpose. Fill in the name of your container, and the folder accordingly.
+5. For the connection between the storage account and Databricks to succeed, we need to create an application 'App Tokyo' in Azure App Registrations and collect the credentials (Client ID, Tenant ID, as well as create a Client Secret and get its value).
+
+<img width="1275" alt="app tokyo" src="https://github.com/user-attachments/assets/f61388d9-5ccc-43b6-b63a-285a72dfa4a0">
+
+
+6. Go to the IAM Access Control in the ADLS settings and give the Blob Storage Data Contributor role to the 'App Tokyo' application.
+
+<img width="1022" alt="tokyoolympicssa role contribution" src="https://github.com/user-attachments/assets/a8b4292f-b464-4928-b60d-db57e60a0657">
+
+
+7. Using the credentials (Client ID, Tenant ID, Secret), write the appropriate code in the Databricks notebook to mount ADLS. It is recommended that you don't share your secret value if the project is to be shared. Utilize the Azure Key Vault for this purpose. Fill in the name of your container, and the folder accordingly.
 
 <img width="1010" alt="image" src="https://github.com/user-attachments/assets/c1b380b2-14d9-46fe-b443-a1905f3a93d9">
 
-6. Use the 'spark.read' to Read the Data from the Raw Folder. Spark automatically detects the schema of the tables with the option 'inferSchema'.
+
+8. Use the 'spark.read' to Read the Data from the Raw Folder. Spark automatically detects the schema of the tables with the option 'inferSchema'.
    
 <img width="1099" alt="spark read from raw container" src="https://github.com/user-attachments/assets/2647dcaa-bf65-4071-9779-b968935507eb">
 
 
-7. Write Transformed Data to ADLS Gen2.
+9. Write Transformed Data to ADLS Gen2.
 
 <img width="1013" alt="spark write to transformed container" src="https://github.com/user-attachments/assets/ea745998-ecda-4082-bf88-bf7322456a46">
 
@@ -77,7 +87,7 @@ The output data was consolidated into a single file within the 'transformed' fol
 
 <img width="1405" alt="athletes_spark_job_transformation" src="https://github.com/user-attachments/assets/6abbbca4-f9d4-4913-a552-5f37149de114">
  
-Refer to below notebook to transformations and code used to mount ADLS Gen2 to Databricks.
+* Please take a look at the notebook below for the whole mounting and transformation script. *
 
 [Tokyo Olympics Transformation.ipynb](https://github.com/NickolasB98/tokyo-olympics-project/blob/main/Tokyo%20Olympic%20Transformation.ipynb)
 
