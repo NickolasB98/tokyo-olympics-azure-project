@@ -58,7 +58,7 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 4. Establishing a Connection to Azure Data Lake Storage (ADLS)
 5. For the connection between the storage account and Databricks to succeed, we need to create an application 'App Tokyo' in Azure App Registrations and collect the credentials (Client ID, Tenant ID, as well as create a Client Secret and get its value).
 
-<img width="1371" alt="Screenshot at Aug 10 00-44-02" src="https://github.com/user-attachments/assets/6d5f84d7-122f-438a-b6ca-f00779ac07ee">
+![Screenshot at Aug 10 00-44-02](https://github.com/user-attachments/assets/50b2dc3f-9c21-4b2f-9589-31c4829e080c)
 
 6. Go to the IAM Access Control in the ADLS settings and give the Blob Storage Data Contributor role to the 'App Tokyo' application.
 
