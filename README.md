@@ -58,18 +58,15 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 4. Establishing a Connection to Azure Data Lake Storage (ADLS)
 5. For the connection between the storage account and Databricks to succeed, we need to create an application 'App Tokyo' in Azure App Registrations and collect the credentials (Client ID, Tenant ID, as well as create a Client Secret and get its value).
 
-<img width="1275" alt="app tokyo" src="https://github.com/user-attachments/assets/f61388d9-5ccc-43b6-b63a-285a72dfa4a0">
-
+<img width="1371" alt="Screenshot at Aug 10 00-44-02" src="https://github.com/user-attachments/assets/6d5f84d7-122f-438a-b6ca-f00779ac07ee">
 
 6. Go to the IAM Access Control in the ADLS settings and give the Blob Storage Data Contributor role to the 'App Tokyo' application.
 
 <img width="1022" alt="tokyoolympicssa role contribution" src="https://github.com/user-attachments/assets/a8b4292f-b464-4928-b60d-db57e60a0657">
 
-
 7. Using the credentials (Client ID, Tenant ID, Secret), write the appropriate code in the Databricks notebook to mount ADLS. It is recommended that you don't share your secret value if the project is to be shared. Utilize the Azure Key Vault for this purpose. Fill in the name of your container, and the folder accordingly.
 
 <img width="1010" alt="image" src="https://github.com/user-attachments/assets/c1b380b2-14d9-46fe-b443-a1905f3a93d9">
-
 
 8. Use the 'spark.read' to Read the Data from the Raw Folder. Spark automatically detects the schema of the tables with the option 'inferSchema'.
    
