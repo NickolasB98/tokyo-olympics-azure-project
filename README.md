@@ -30,7 +30,7 @@ Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunpr
 3. Within the created resource group, set up a storage account. This is configured to leverage Azure Data Lake Storage(ADLS) Gen2 capabilities.
 4. Create a Container inside this storage account to hold the project's data. Two directories 'raw' and 'transformed' are created to store raw and transformed data.
    
-<img width="1427" alt="containers" src="https://github.com/user-attachments/assets/3068ed5c-3054-4c8d-9d34-7a2ea51d7201">
+<img width="1427" alt="containers" src="https://github.com/user-attachments/assets/33cc47ee-ba81-4038-9b5f-7e22343ecc81">
 
 ### Data Ingestion using Azure Data Factory
 1. Workspace Creation: An Azure Data Factory workspace is established within the designated resource group.
