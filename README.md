@@ -1,17 +1,17 @@
 
 # Tokyo Olympics Data Analytics | Azure End-To-End Analytics Engineering Project 
 
-**Project Background**
+## Project Background
 
 This project analyses Tokyo Olympics 2021 data using Azure Data Factory (ADF), Azure Databricks, and Azure Synapse Analytics. The goal is to ingest, transform, and load data from multiple sources into a centralized data warehouse, enabling the analytics team to derive meaningful insights and build predictive models. The project demonstrates the integration of Azure services to create a fully automated data pipeline.
 
-**Key Business Metrics**
+## Key Business Metrics
 
 * **Dataset:** Tokyo Olympics 2021 data (athletes, medals, teams, etc.). (Source(Kaggle): [2021 Olympics in Tokyo](https://www.kaggle.com/datasets/arjunprasadsarkhel/2021-olympics-in-tokyo))
 * **Data Sources:** CSV files stored in GitHub.
 * **Business Goal:** Provide actionable insights into Olympics performance, medal distribution, and athlete statistics.
 
-**Data Structure & Initial Checks**
+## Data Structure & Initial Checks
 
 The dataset consists of the following tables:
 
@@ -30,7 +30,7 @@ The dataset consists of the following tables:
 
 <img width="1377" alt="tokyoDB" src="https://github.com/user-attachments/assets/7e5db195-95ed-4c7e-84db-bf5c566bc72c">
 
-**Executive Summary**
+## Executive Summary
 
 **Overview of Findings**
 
@@ -41,7 +41,7 @@ This project successfully implemented a fully automated data pipeline to ingest,
 * **Centralized Reporting:** Loading of transformed data into Azure Synapse Analytics for SQL-based analysis.
 * **Visualization:** Insights were visualized using SQL scripts in Azure Synapse.
 
-**Insights Deep Dive**
+## Insights Deep Dive
 
 **Category 1: Athlete Participation (Most Athletes Per Country)**
 
@@ -99,7 +99,7 @@ This project successfully implemented a fully automated data pipeline to ingest,
 * **Supporting Data:** The bar chart shows Basketball with the longest bar, indicating a much higher coach count compared to other disciplines.
 * **Implication:** This suggests a strong emphasis on coaching and athlete support in Basketball, potentially due to team size, strategic complexity, or high competition.
 
-**Recommendations**
+## Recommendations
 
 Based on the insights above, we recommend the following actions:
 
@@ -108,13 +108,13 @@ Based on the insights above, we recommend the following actions:
 * **Coaching Programs:** Expand coaching staff and training facilities to support athlete development.
 * **Data-Driven Decisions:** Use data analytics to identify emerging trends and optimize performance strategies.
 
-**Assumptions and Caveats**
+## Assumptions and Caveats
 
 * **Assumption 1:** Data from the Tokyo Olympics 2021 is accurate and complete.
 * **Assumption 2:** The data reflects only the 2021 Olympics and may not be applicable to other events.
 * **Assumption 3:** Team size and coaching staff data are consistent across all countries.
 
-**Tools and Technologies Used**
+## Tools and Technologies Used
 
 * **Data Integration/Ingestion:** Azure Data Factory (ADF)
 * **Data Transformation:** Azure Databricks (PySpark)
@@ -122,7 +122,7 @@ Based on the insights above, we recommend the following actions:
 * **Data Analysis:** Azure Synapse Analytics
 * **Visualization:** Power BI (optional)
 
-**Solution Architecture**
+## Solution Architecture
 
 **Overview**
 
@@ -135,13 +135,12 @@ The architecture involves:
 
 ![Architecture](https://github.com/user-attachments/assets/697a0821-19b9-417e-8092-69781dc1f2c9)
 
-**Project Execution Flow**
+### Project Execution Flow
 
 * **Data Ingestion:** Ingest raw data from GitHub into Azure Data Lake Gen2 using ADF.
 * **Data Transformation:** Clean and transform data using Azure Databricks.
 * **Data Loading:** Load transformed data into Azure Synapse Analytics.
 * **Reporting:** Create interactive dashboards in Azure Synapse and Power BI for analysis and visualization.
-
 
 
 ## Optional Reading - Project Workflow Analysis
@@ -215,8 +214,6 @@ The output data was consolidated into a single file within the 'transformed' fol
 1. Creating a Synapse Analytics Workspace.
 2. Within Workspace navigate to the "Data" section, choose "Lake Database"  and create a Database "TokyoDB"
 3. Create the Tables from the Data Lake's Transformed folder within your ADLS Gen2 storage.
-
-<img width="1377" alt="tokyoDB" src="https://github.com/user-attachments/assets/7e5db195-95ed-4c7e-84db-bf5c566bc72c">
 
 **Refer to the SQL scripts used for data exploration and analysis in Azure Synapse Analytics:**
 
